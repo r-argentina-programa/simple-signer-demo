@@ -2,7 +2,7 @@ import { Horizon, Keypair, Server } from 'stellar-sdk';
 
 const server = new Server('http://localhost:8000', { allowHttp: true });
 
-export async function createFundedAccounts() {
+export async function createFundedAccount() {
     try {
         console.log('Creating Account 1...');
 
@@ -32,7 +32,7 @@ export async function getBalance(publicKey: string): Promise<string | undefined>
 
         accountBalance = balances.find((balance: Horizon.BalanceLine) => balance.asset_type === 'native')?.balance;
     } catch (error) {
-        console.error('Balance account not found:', error);
+        console.error('Account balance not found:', error);
     }
     return accountBalance;
 }
