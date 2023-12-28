@@ -1,0 +1,10 @@
+version: '3'
+
+services:
+  stellar:
+    image: stellar/quickstart
+    container_name: stellar
+    command: --local
+    ports:
+      - '8000:8000'
+      - '8001:8001'

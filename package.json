@@ -1,0 +1,87 @@
+{
+    "name": "simple-stellar-signer",
+    "version": "0.0.1",
+    "type": "module",
+    "scripts": {
+        "dev:test": "vite --https --port 3002 --mode env",
+        "dev": "vite --https --mode env",
+        "dev:open": "vite --open --https --mode env",
+        "build": "vite build",
+        "preview": "vite preview",
+        "check": "svelte-check --tsconfig ./tsconfig.json",
+        "lint:fix": "eslint --fix --ext .js --ext .ts --ext .svelte . && prettier --config .prettierrc --write . && npm run check",
+        "prepare": "husky install",
+        "test": "jest src",
+        "test:watch": "npm run test -- --watch",
+        "test:ui:dev": "cypress open",
+        "test:ui:headless": "cypress run"
+    },
+    "lint-staged": {
+        "*.{svelte,js,ts}": "npm run lint:fix"
+    },
+    "jest": {
+        "transform": {
+            "^.+\\.svelte$": [
+                "svelte-jester",
+                {
+                    "preprocess": true
+                }
+            ],
+            "^.+\\.ts$": "ts-jest"
+        },
+        "moduleFileExtensions": [
+            "js",
+            "ts",
+            "svelte"
+        ],
+        "setupFilesAfterEnv": [
+            "@testing-library/jest-dom/extend-expect"
+        ],
+        "setupFiles": [
+            "dotenv/config"
+        ]
+    },
+    "devDependencies": {
+        "@esbuild-plugins/node-globals-polyfill": "^0.1.1",
+        "@esbuild-plugins/node-modules-polyfill": "^0.1.4",
+        "@sveltejs/vite-plugin-svelte": "^1.0.0-next.30",
+        "@testing-library/cypress": "^8.0.2",
+        "@testing-library/jest-dom": "^5.16.1",
+        "@tsconfig/svelte": "^2.0.1",
+        "@types/jest": "^27.4.0",
+        "@typescript-eslint/eslint-plugin": "^5.9.1",
+        "@typescript-eslint/parser": "^5.9.1",
+        "autoprefixer": "^10.4.2",
+        "cypress": "^9.3.1",
+        "dotenv": "^16.0.0",
+        "eslint": "^8.6.0",
+        "eslint-config-airbnb-base": "^15.0.0",
+        "eslint-config-prettier": "^8.3.0",
+        "eslint-plugin-import": "^2.25.4",
+        "eslint-plugin-prettier": "^4.0.0",
+        "eslint-plugin-svelte3": "^3.3.0",
+        "husky": "^7.0.4",
+        "jest": "^27.4.7",
+        "jest-environment-jsdom": "^27.4.6",
+        "jest-environment-jsdom-global": "^3.0.0",
+        "lint-staged": "^12.1.7",
+        "postcss": "^8.4.5",
+        "prettier": "^2.5.1",
+        "prettier-plugin-svelte": "^2.5.1",
+        "rollup-plugin-node-polyfills": "^0.2.1",
+        "svelte": "^3.44.0",
+        "svelte-check": "^2.2.7",
+        "svelte-clipboard": "^1.0.0",
+        "svelte-jester": "^2.1.5",
+        "svelte-navigator": "^3.1.5",
+        "svelte-preprocess": "^4.9.8",
+        "tailwindcss": "^3.0.17",
+        "ts-jest": "^27.1.3",
+        "tslib": "^2.3.1",
+        "typescript": "^4.4.4",
+        "vite": "^2.7.2"
+    },
+    "dependencies": {
+        "stellar-sdk": "^10.4.1"
+    }
+}
