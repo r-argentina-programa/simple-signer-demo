@@ -8,9 +8,6 @@ on:
 
 jobs:
     test:
-        permissions: write-all
-        runs-on: ubuntu-latest
-
         strategy:
             matrix:
                 node-version: [16.x]
