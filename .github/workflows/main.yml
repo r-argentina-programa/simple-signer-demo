@@ -7,7 +7,7 @@ on:
         branches: ['*']
 
 jobs:
-    build_and_test:
+    test:
         permissions: write-all
         runs-on: ubuntu-latest
 
