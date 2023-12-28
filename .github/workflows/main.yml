@@ -7,7 +7,7 @@ on:
         branches: ['*']
 
 jobs:
-    build_and_test:
+    test:
         permissions: write-all
         runs-on: ubuntu-latest
 
@@ -30,5 +30,5 @@ jobs:
             - name: NPM or Yarn install with caching
               uses: bahmutov/npm-install@v1.6.0
 
-            - name: Build and test with coverage
+            - name: Run Stellar Test
               run: npm run test
