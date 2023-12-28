@@ -4,7 +4,7 @@
 import { expect } from '@jest/globals';
 import { createFundedAccounts, getBalance } from '../stellar/accountSetup';
 
-it('Should get accounts funded', async () => {
+it('Should get account funded', async () => {
     await createFundedAccounts();
     const balance = await getBalance(process.env.VITE_MOCKED_ACCOUNT_1_PUBLIC_KEY);
 
