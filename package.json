@@ -20,6 +20,7 @@
         "*.{svelte,js,ts}": "npm run lint:fix"
     },
     "jest": {
+        "testTimeout": 10000,
         "transform": {
             "^.+\\.svelte$": [
                 "svelte-jester",
@@ -82,6 +83,7 @@
         "vite": "^2.7.2"
     },
     "dependencies": {
-        "stellar-sdk": "^10.4.1"
+        "stellar-sdk": "^10.4.1",
+        "stellar-wallets-kit": "github:Creit-Tech/Stellar-Wallets-Kit"
     }
 }
